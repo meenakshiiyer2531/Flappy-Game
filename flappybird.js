@@ -148,8 +148,8 @@ function placePipes() {
     pipeArray.push(bottomPipe);
 }
 
-function moveBird(e) {
-    if (e.code == "Space" || e.code == "ArrowUp" || e.code == "KeyX") {
+function moveBird() {
+    // if (e.code == "Space" || e.code == "ArrowUp" || e.code == "KeyX"||e.type == "touchstart") {
         //jump
         velocityY = -6;
 
@@ -160,9 +160,13 @@ function moveBird(e) {
             score = 0;
             gameOver = false;
         }
-    }
+    // }
 }
-
+// Attach touch event listener to the document
+document.addEventListener('touchstart', moveBird);
+// Attach mouse click event listener to the document
+document.addEventListener('click', moveBird);
+document.addEventListener('mousedown', moveBird);
 function detectCollision(a, b) {
     return a.x < b.x + b.width &&   //a's top left corner doesn't reach b's top right corner
            a.x + a.width > b.x &&   //a's top right corner passes b's top left corner
