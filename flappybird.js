@@ -105,11 +105,14 @@ function update() {
 
     //score
     context.fillStyle = "white";
-    context.font="45px sans-serif";
-    context.fillText(score, 5, 45);
+    context.font="20px sans-serif";
+    context.fillText("HIGHEST SCORE: "+(score+100), 5, 70);
+    context.fillText("CURRENT SCORE: "+score, 5, 45);
+  
 
     if (gameOver) {
-        context.fillText("GAME OVER", 5, 90);
+    context.font="35px serif";
+        context.fillText("GAME OVER", 70, 250);
     }
 }
 
